@@ -16,7 +16,6 @@ const SimpleInput = (props) => {
 
     if (event.target.value.trim() !== "") {
       setEnteredNameIsValid(true);
-
     }
   };
 
@@ -44,13 +43,18 @@ const SimpleInput = (props) => {
       setEnteredNameIsValid(false);
       return;
     }
-  }
+  };
 
   return (
     <form onSubmit={formSubmissionHandler}>
       <div className={nameInputClasses}>
         <label htmlFor="name">Your Name</label>
-        <input type="text" id="name" onChange={nameInputChangeHandler} onBlur={nameInputBlurHandler}/>
+        <input
+          type="text"
+          id="name"
+          onChange={nameInputChangeHandler}
+          onBlur={nameInputBlurHandler}
+        />
         {nameInputIsInvalid && <p className="error-text">Enter valid input</p>}
       </div>
       <div className="form-actions">
